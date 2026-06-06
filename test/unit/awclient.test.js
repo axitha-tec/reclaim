@@ -53,7 +53,7 @@ describe('awclient auth bootstrap', () => {
     expect(AWClient).toHaveBeenCalledWith(
       'aw-webui',
       expect.objectContaining({
-        baseURL: 'http://127.0.0.1:5666',
+        baseURL: 'http://127.0.0.1:5600',
         testing: true,
       })
     );

@@ -60,23 +60,10 @@ div
           li AI-powered recommendations
           li Parent monitoring support
 
-    hr
-
-    p.text-center
-      small
-        i
-          | Configure system preferences from the #[router-link(to="/settings") settings] page.
-
 </template>
 
 <script lang="ts">
-import { mapState } from 'pinia';
-import { useServerStore } from '~/stores/server';
-
 export default {
   name: 'Home',
-  computed: {
-    ...mapState(useServerStore, ['info']),
-  },
 };
 </script>
