@@ -18,7 +18,7 @@ export default {
       entry: './src/main.js',
       template: './index.html',
       templateParameters: {
-        cspDefaultSrc: process.env.NODE_ENV === 'production' ? '' : '*:5600 *:5666 ws://*:27180',
+        cspDefaultSrc: process.env.NODE_ENV === 'production' ? '' : '*:5600 *:5666 *:5001 ws://*:27180',
       },
     },
   },
@@ -55,12 +55,18 @@ export default {
     ],
   },
   devServer: {
-    compress: true,
-    port: 27180,
-    static: {
-      directory: path.join(__dirname, 'dist'),
+  compress: true,
+  port: 27180,
+  proxy: {
+    '/api': {
+      target: 'http://127.0.0.1:5600',
+      changeOrigin: true,
     },
   },
+  static: {
+    directory: path.join(__dirname, 'dist'),
+  },
+},
   pwa: {
     name: 'ActivityWatch',
     iconPaths: {

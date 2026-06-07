@@ -265,3 +265,42 @@ div[style="color: rgb(85, 85, 85); font-size: 0.9em;"] {
   background-color: hsl(355, 60%, 30%);
   border-color: hsl(355, 60%, 25%);
 }
+/* Reclaim Custom Branding */
+
+body {
+  background: linear-gradient(135deg, #07111f, #111827) !important;
+}
+
+.aw-navbar {
+  background-color: #0b1220 !important;
+  border-bottom: 2px solid #38bdf8 !important;
+}
+
+.navbar-brand span {
+  color: #38bdf8 !important;
+  font-weight: bold !important;
+}
+
+.card,
+.aw-container {
+  background-color: #111827 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35) !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #38bdf8 !important;
+}
+
+.btn-primary,
+.btn-warning {
+  background-color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  color: #06121f !important;
+}
+
+.nav-item a.nav-link.router-link-exact-active {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+}

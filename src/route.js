@@ -1,7 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
-const Home = () => import('./views/Home.vue');
+const ReclaimReport = () => import('./views/ReclaimReport.vue');
+const Home = () => import('./views/ReclaimHome.vue');
+const ParentDashboard = () => import('./views/ParentDashboard.vue');
+const AIInsights = () => import('./views/AIInsights.vue');
+const LiveActivity = () => import('./views/LiveActivity.vue');
+const MonthlyAnalysis = () => import('./views/MonthlyAnalysis.vue');
+const ReclaimActivity = () => import('./views/ReclaimActivity.vue');
+const ReclaimLanding = () => import('./views/ReclaimLanding.vue');
 
 // Activity views for desktop
 const Activity = () => import('./views/activity/Activity.vue');
@@ -19,6 +25,7 @@ const WorkReport = () => import('./views/WorkReport.vue');
 const Alerts = () => import('./views/Alerts.vue');
 const Search = () => import('./views/Search.vue');
 const Report = () => import('./views/Report.vue');
+
 const TimespiralView = () => import('./views/TimespiralView.vue');
 const Dev = () => import('./views/Dev.vue');
 const Graph = () => import('./views/Graph.vue');
@@ -30,9 +37,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: _to => {
-        return localStorage.landingpage || '/home';
-      },
+      component: ReclaimLanding,
     },
     { path: '/home', component: Home },
     {
@@ -60,9 +65,14 @@ const router = new VueRouter({
     { path: '/timeline', component: Timeline, meta: { fullContainer: true } },
     { path: '/trends', component: Trends, meta: { fullContainer: true } },
     { path: '/trends/:host', component: Trends, meta: { fullContainer: true } },
-    { path: '/report', component: Report },
+    { path: '/report', component: ReclaimReport },
+    { path: '/parent-dashboard', component: ParentDashboard },
     { path: '/query', component: QueryExplorer },
+    { path: '/ai-insights', component: AIInsights },  
+    { path: '/monthly-analysis', component: MonthlyAnalysis },
+    { path: '/live-activity', component: LiveActivity },
     { path: '/alerts', component: Alerts },
+    { path: '/reclaim-activity', component: ReclaimActivity },
     { path: '/timespiral', component: TimespiralView },
     { path: '/settings', component: Settings },
     { path: '/settings/category-builder', component: CategoryBuilder },
